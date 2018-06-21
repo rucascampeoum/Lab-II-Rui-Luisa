@@ -23,3 +23,5 @@ request({url: `https://maps.googleapis.com/maps/api/geocode/json?address=${morad
     console.log(`It's ${temperature}. It feels like: ${apparentTemperature}.`)
 });
 });
+
+//Como fazer o pedido no terminal: node pedidos.js --morada "Morada"
