@@ -8,9 +8,11 @@ const app= express();
 //__dirname lê o caminho ate o node
 app.use(express.static(__dirname+"/public"))
 
+app.set("view engine", "hbs");
+
 // COLOCAR NO BROWSER - http://localhost:3000/
 app.get('/',(request, response)=>{
-    response.render('welcome.hbs',{
+    response.render('index.hbs',{
         title:"Welcome to this site",
         text:"Hello from Express"
     });
