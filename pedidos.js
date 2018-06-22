@@ -5,7 +5,7 @@ const yargs = require('yargs');
 
     var GoogleAPIKey = 'AIzaSyD7meilaIIDrfgGdcY81BcMit5DtPpZZrA';
     var DarkSkyAPIKey = 'a0d3e83e6e619d62098fa6fd0d6b86f4';
-
+    
     const argv = yargs.argv;
     var morada = argv.morada;
     var moradaEncoded = encodeURIComponent(morada);

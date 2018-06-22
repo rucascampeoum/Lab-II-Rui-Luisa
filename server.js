@@ -29,10 +29,12 @@ app.get('/',(req, res)=>{
     app.get('/weather',(req, res)=>{
         
         var moradaEncoded = encodeURIComponent(req.query.texto);
-        request({url: `https://maps.googleapis.com/maps/api/geocode/json?address=${moradaEncoded}&key=${GoogleAPIKey}`, json: true}, (error, response, body) => {
-    var lat = body.results[0].geometry.location.lat; 
-    var lng = body.results[0].geometry.location.lng;
-    var moradaEncoded = body.results[0].moradaEncoded;
+        request({url: `https://maps.googleapis.com/maps/api/geocode/json?address=${moradaEncoded}&key=${GoogleAPIKey}`, json: true}, 
+        (error, response, body) => {
+            console.log(body);
+            var lat = body.results[0].geometry.location.lat; 
+            var lng = body.results[0].geometry.location.lng;
+    //var moradaEncoded = body.results[0].moradaEncoded;
     //estamos a pedir um json, do qual precisamos do body, onde está o array results, dentro do qual encontramos os objetos geometry, location e lat/lng
     var formatted_address = body.results[0].formatted_address;
 
@@ -40,12 +42,13 @@ app.get('/',(req, res)=>{
     var temperature = DSbody.currently.temperature;
     var apparentTemperature = DSbody.currently.apparentTemperature;
 
-    console.log(`${morada}`)
-    console.log(`It's ${temperature}. It feels like: ${apparentTemperature}.`)
+    //console.log(req.query.texto)
+    //console.log(`It's ${temperature}. It feels like: ${apparentTemperature}.`)
+    res.render("papagaio.hbs", {texto: `${req.query.texto}... It's ${temperature}. It feels like: ${apparentTemperature}.`});
 });
-res.render("papagaio.hbs", {texto: req.query.texto});
+    
 });
-        });
+});
     
 
 //arranca o servidor e diz a porta que se vai usar
