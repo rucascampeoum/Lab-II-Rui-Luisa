@@ -1,3 +1,5 @@
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+
 const request = require('request');
 const yargs = require('yargs');
 
@@ -26,3 +28,16 @@ request({url: `https://maps.googleapis.com/maps/api/geocode/json?address=${morad
 
 //Como fazer o pedido no terminal: node pedidos.js --morada "Morada"
 
+
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                    var x, sitio;
+                
+                    // Get the value of the input field with id="numb"
+                    x = document.getElementById("item").innerText || document.getElementById("item").textContent;
+                
+                    morada === x;
+                
+                    alert(x);
+            });
+        });
