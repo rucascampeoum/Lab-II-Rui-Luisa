@@ -25,13 +25,12 @@ app.get('/',(req, res)=>{
     });
     
     });
-  //COLOCAR NO BROWSER - http://localhost:3000/about
+
     app.get('/weather',(req, res)=>{
         
         var moradaEncoded = encodeURIComponent(req.query.texto);
         request({url: `https://maps.googleapis.com/maps/api/geocode/json?address=${moradaEncoded}&key=${GoogleAPIKey}`, json: true}, 
         (error, response, body) => {
-            console.log(body);
             var lat = body.results[0].geometry.location.lat; 
             var lng = body.results[0].geometry.location.lng;
     //var moradaEncoded = body.results[0].moradaEncoded;
@@ -44,11 +43,23 @@ app.get('/',(req, res)=>{
 
     //console.log(req.query.texto)
     //console.log(`It's ${temperature}. It feels like: ${apparentTemperature}.`)
-    res.render("papagaio.hbs", {texto: `${req.query.texto}... It's ${temperature}. It feels like: ${apparentTemperature}.`});
+    res.render("papagaio.hbs", {texto: `${req.query.texto}... Temperatura: ${temperature}. Temperatura Aparente: ${apparentTemperature}.`});
+}); 
 });
+});
+
+app.get('/favorites',(req, res)=>{
+
+    if (localStorage) {
+        
+    }
+
+    res.render('favorites.hbs',{
+        title:"Welcome to this site",
+        text:"Hello from Express"
+    });
     
-});
-});
+    });
     
 
 //arranca o servidor e diz a porta que se vai usar
