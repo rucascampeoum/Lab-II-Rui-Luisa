@@ -19,18 +19,15 @@ app.get('/',(request, response)=>{
     
     });
   //COLOCAR NO BROWSER - http://localhost:3000/about
-    app.get('/about',(request, response)=>{
-        response.render('welcome.hbs',{
-            title:"About my site",
-            text:"..."
-        });
-        
+    app.get('/weather',(request, response)=>{
+        response.render("papagaio.hbs", {texto: request.query.texto});
+
         });
 
 
     //COLOCAR NO BROWSER - http://localhost:3000/horas    
         app.get('/horas',(request, response)=>{
-            response.render('welcome.hbs',{
+            response.render('index.hbs',{
                 title:"Current time:",
                 text:Date().toString()
             });
