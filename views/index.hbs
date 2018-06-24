@@ -12,8 +12,8 @@
     </form>
 
      <form name="local2">
-        <input id="repetido" name="texto" type="text" onblur="document.local.texto.value = this.value;">
-    <button type="faves">Guardar favorito</button>
+        <input id="repetido" name="texto" type="text">
+    <button id="faves" type="submit">Guardar favorito</button>
 
     <div class="col-md-6">
               <p id="fave-list-text">Nenhum Item Adicionado</p>
@@ -63,7 +63,7 @@
           /*
            * add to local storage when the form is submitted
            */
-           .submit(function(){
+           document.getElementById('faves').onclick = function(){
             var faveList_string = localStorage.getItem('faveList');
             var faveList =[];
 
@@ -73,7 +73,7 @@
             faveList.push($("#repetido").val());
             localStorage.setItem('faveList', JSON.stringify(faveList));
             console.log(localStorage);
-          })
+          }
       }
     });
     </script>
