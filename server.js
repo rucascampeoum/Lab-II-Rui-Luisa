@@ -26,7 +26,7 @@ app.get('/',(req, res)=>{
     
     });
 
-    app.get('/weather',(req, res)=>{
+    app.get('/clima',(req, res)=>{
         
         var moradaEncoded = encodeURIComponent(req.query.texto);
         request({url: `https://maps.googleapis.com/maps/api/geocode/json?address=${moradaEncoded}&key=${GoogleAPIKey}`, json: true}, 
@@ -43,18 +43,16 @@ app.get('/',(req, res)=>{
 
     //console.log(req.query.texto)
     //console.log(`It's ${temperature}. It feels like: ${apparentTemperature}.`)
-    res.render("papagaio.hbs", {texto: `${req.query.texto}... Temperatura: ${temperature}. Temperatura Aparente: ${apparentTemperature}.`});
+    res.render("clima.hbs", {texto: `${req.query.texto}... Temperatura: ${temperature}. Temperatura Aparente: ${apparentTemperature}.`});
 }); 
 });
 });
 
-app.get('/favorites',(req, res)=>{
+app.get('/favoritos',(req, res)=>{
 
-    if (localStorage) {
-        
-    }
 
-    res.render('favorites.hbs',{
+
+    res.render('favoritos.hbs',{
         title:"Welcome to this site",
         text:"Hello from Express"
     });
