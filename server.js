@@ -50,7 +50,7 @@ app.get('/',(req, res)=>{
 
 app.get('/favoritos',(req, res)=>{
 
-
+//isto nao me parece ser preciso, mas podemos aproveitar esta parte do código para trocar "favoritos" por outra secção que iremos ter
 
     res.render('favoritos.hbs',{
         title:"Welcome to this site",
