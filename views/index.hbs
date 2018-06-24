@@ -47,7 +47,8 @@
           var faveList = JSON.parse(faveList_string);
           console.log(faveList);
           $.each(faveList, (index, text) => {
-            $("#fave-list").append(`<li class="list-group-item">${text}</li>`);
+            var textoEncoded = encodeURIComponent(text);
+            $("#fave-list").append(`<li class="list-group-item"><a href="http://localhost:3000/clima?texto=${textoEncoded}">${text}</a></li>`);
           });
         }
         
