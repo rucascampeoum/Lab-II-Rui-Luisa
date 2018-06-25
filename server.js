@@ -40,10 +40,26 @@ app.get('/',(req, res)=>{
     request({url: `https://api.darksky.net/forecast/${DarkSkyAPIKey}/${lat},${lng}?units=si`, json: true}, (DSerror, DSresponse, DSbody) => {
     var temperature = DSbody.currently.temperature;
     var apparentTemperature = DSbody.currently.apparentTemperature;
+    var icon = DSbody.currently.icon;
+    var summary = DSbody.currently.summary;
+    var windSpeed = DSbody.currently.windSpeed;
+    var visibility = DSbody.currently.visibility;
+    var pressure = DSbody.currently.pressure;
+    var humidity = DSbody.currently.humidity;
+    var dewPoint = DSbody.currently.dewPoint;
+    //fui buscar (pelo menos inicialmente) os aspectos do clima que aparecem na parte de cima da app de meteorologia do Windows, como referência
 
     //console.log(req.query.texto)
     //console.log(`It's ${temperature}. It feels like: ${apparentTemperature}.`)
-    res.render("clima.hbs", {texto: `${req.query.texto}... Temperatura: ${temperature}. Temperatura Aparente: ${apparentTemperature}.`});
+    res.render("clima.hbs", {texto: `${req.query.texto}... Temperatura: ${temperature}°C. ${icon}`,
+                             texto2: `${summary}`,
+                             texto3: `Temperatura Aparente: ${apparentTemperature}°C.
+                             Velocidade do Vento: ${windSpeed} km/h.
+                             Visibilidade: ${visibility} km.
+                             Pressão Atmosférica: ${pressure} mb.
+                             Humidade: ${humidity}%
+                             Ponto de Condensação: ${dewPoint}°`
+});
 }); 
 });
 });
