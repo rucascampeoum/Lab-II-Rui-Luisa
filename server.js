@@ -37,7 +37,7 @@ app.get('/',(req, res)=>{
     //estamos a pedir um json, do qual precisamos do body, onde está o array results, dentro do qual encontramos os objetos geometry, location e lat/lng
     var formatted_address = body.results[0].formatted_address;
 
-    request({url: `https://api.darksky.net/forecast/${DarkSkyAPIKey}/${lat},${lng}?units=si`, json: true}, (DSerror, DSresponse, DSbody) => {
+    request({url: `https://api.darksky.net/forecast/${DarkSkyAPIKey}/${lat},${lng}?units=si&lang=pt`, json: true}, (DSerror, DSresponse, DSbody) => {
     var temperature = DSbody.currently.temperature;
     var apparentTemperature = DSbody.currently.apparentTemperature;
     var icon = DSbody.currently.icon;
