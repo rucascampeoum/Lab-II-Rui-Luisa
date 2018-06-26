@@ -103,6 +103,13 @@
           }
       }
     });
+
+
+    //esta função não funciona ou usei-a mal
+    function htmlEncode(value){
+  //ignora conteudo html, representando-o como texto
+  return $('<div/>').text(value).html();
+}
     </script>
 </body>
 </html>
