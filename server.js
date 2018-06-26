@@ -47,18 +47,23 @@ app.get('/',(req, res)=>{
     var pressure = DSbody.currently.pressure;
     var humidity = DSbody.currently.humidity;
     var dewPoint = DSbody.currently.dewPoint;
+    var precipProbability = DSbody.currently.precipProbability;
     //fui buscar (pelo menos inicialmente) os aspectos do clima que aparecem na parte de cima da app de meteorologia do Windows, como referência
+    //e na app Weather do iPhone
 
     //console.log(req.query.texto)
     //console.log(`It's ${temperature}. It feels like: ${apparentTemperature}.`)
-    res.render("clima.hbs", {texto: `${req.query.texto}... Temperatura: ${temperature}°C. ${icon}`,
-                             texto2: `${summary}`,
-                             texto3: `Temperatura Aparente: ${apparentTemperature}°C.
-                             Velocidade do Vento: ${windSpeed} km/h.
-                             Visibilidade: ${visibility} km.
-                             Pressão Atmosférica: ${pressure} mb.
-                             Humidade: ${humidity}%
-                             Ponto de Condensação: ${dewPoint}°`
+    res.render("clima.hbs", {texto: `${req.query.texto}`,
+                             icone: `${icon}`,
+                             texto2: `Temperatura: ${temperature}°C.`, 
+                             texto3: `${summary}`,
+                             texto4: `Temperatura Aparente: ${apparentTemperature}°C.`,
+                             texto5: `Velocidade do Vento: ${windSpeed} km/h.`,
+                             texto6: `Visibilidade: ${visibility} km.`,
+                             texto7: `Pressão Atmosférica: ${pressure} mb.`,
+                             texto8: `Humidade: ${humidity}%`,
+                             texto9: `Ponto de Condensação: ${dewPoint}°`,
+                             texto10: `Probabilidade de Precipitação: ${precipProbability}.`
 });
 }); 
 });
@@ -74,7 +79,7 @@ app.get('/favoritos',(req, res)=>{
     });
     
     });
-    
 
+    
 //arranca o servidor e diz a porta que se vai usar
 app.listen(3000);
