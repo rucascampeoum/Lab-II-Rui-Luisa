@@ -1,4 +1,5 @@
 src="https://code.jquery.com/jquery-3.3.1.min.js"
+src="public/skycons.js"
 
 const express=require('express');
 const request = require('request');
@@ -74,17 +75,6 @@ app.get('/',(req, res)=>{
 }
 });
 });
-
-app.get('/favoritos',(req, res)=>{
-
-//isto nao me parece ser preciso, mas podemos aproveitar esta parte do código para trocar "favoritos" por outra secção que iremos ter
-
-    res.render('favoritos.hbs',{
-        title:"Welcome to this site",
-        text:"Hello from Express"
-    });
-    
-    });
 
     
 //arranca o servidor e diz a porta que se vai usar
