@@ -20,8 +20,8 @@ app.set("view engine", "hbs");
 // COLOCAR NO BROWSER - http://localhost:3000/
 app.get('/',(req, res)=>{
     res.render('index.hbs',{
-        title:"Welcome to this site",
-        text:"Hello from Express"
+        //title:"Welcome to this site",
+        text:"Olá Utilizador, venha ver a meteorologia"
     });
     
     });
@@ -31,6 +31,7 @@ app.get('/',(req, res)=>{
         var moradaEncoded = encodeURIComponent(req.query.texto);
         request({url: `https://maps.googleapis.com/maps/api/geocode/json?address=${moradaEncoded}&key=${GoogleAPIKey}`, json: true}, 
         (error, response, body) => {
+            try{
             var lat = body.results[0].geometry.location.lat; 
             var lng = body.results[0].geometry.location.lng;
     //var moradaEncoded = body.results[0].moradaEncoded;
@@ -65,7 +66,12 @@ app.get('/',(req, res)=>{
                              texto9: `Ponto de Condensação: ${dewPoint}°`,
                              texto10: `Probabilidade de Precipitação: ${precipProbability}.`
 });
-}); 
+});
+} catch(err) {
+    res.render('index.hbs',{
+        text:"Utilizador, realizou uma pesquisa inválida."
+    });
+}
 });
 });
 
