@@ -11,18 +11,25 @@
         body{
             background: url("../pics/sky.png") no-repeat; /* why????? */
         }
+
+        .btn { 
+            font-family: Montserrat, sans-serif;
+            background-color: #3a46f0; 
+            color: #ffffff;
+        }
+
         .localidade { 
             font-family: Montserrat, sans-serif;
             align-content: center;
             padding: 20px;
-            background-color:darkseagreen;
+            background-color:white;
             text-align: center;
             text-transform: capitalize;
-            color: #ffffff;
+            color: #000;
         }
         .info { 
             font-family: Montserrat, sans-serif;
-            background-color: #3a46f0;
+            background-color: #000;
             align-content: center;
             text-align: center;
             color: #ffffff;
@@ -32,41 +39,48 @@
         .icons{
             align-content: center;
         }
-        
+
         ul{
+            background-color:white;
             padding: 20px;
             font-family: Montserrat, sans-serif;
-            list-style-type: circle;
+            list-style-type: none;
             color: #000;
             align-content: center;
-            text-align: left;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
     <div class="localidade">
+        <button type="submit" class="btn" action="/index" onclick="location.href='/'">Voltar atrás</button>
         <h1>{{texto}}</h1>
     </div>
 
     <div>
         <div class="info">
                 <figure class="icons">
-        <canvas id="{{icone}}" width="64" height="64">
+        <canvas id="{{icone}}" width="90" height="90">
         </canvas>
       </figure>
             <h2>{{texto2}}</h2>
             <h3>{{texto3}}</h3>
         </div>
-        <ul>
-            <li>{{texto4}}</li>
-            <li>{{texto5}}</li>
-            <li>{{texto6}}</li>
-            <li>{{texto7}}</li>
-            <li>{{texto8}}</li>
-            <li>{{texto9}}</li>
-            <li>{{texto10}}</li>
-        </ul>
+
+        <div class="list">
+            <ul>
+                <li>{{texto4}}</li>
+                <li>{{texto5}}</li>
+                <li>{{texto6}}</li>
+                <li>{{texto7}}</li>
+                <li>{{texto8}}</li>
+                <li>{{texto9}}</li>
+                <li>{{texto10}}</li>
+                <li>{{texto11}}</li>
+                <li>{{texto12}}</li>
+            </ul>
+        </div>
     </div>
 
 
@@ -89,6 +103,8 @@
         icons.play();
 
         language = "pt";
+
+        
     </script>
 </body>
 </html>

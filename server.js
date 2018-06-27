@@ -1,4 +1,5 @@
 src="https://code.jquery.com/jquery-3.3.1.min.js"
+src="public/skycons.js"
 
 const express=require('express');
 const request = require('request');
@@ -20,8 +21,8 @@ app.set("view engine", "hbs");
 // COLOCAR NO BROWSER - http://localhost:3000/
 app.get('/',(req, res)=>{
     res.render('index.hbs',{
-        title:"Welcome to this site",
-        text:"Hello from Express"
+        //title:"Welcome to this site",
+        text:"Olá Utilizador, venha ver a meteorologia"
     });
     
     });
@@ -31,6 +32,7 @@ app.get('/',(req, res)=>{
         var moradaEncoded = encodeURIComponent(req.query.texto);
         request({url: `https://maps.googleapis.com/maps/api/geocode/json?address=${moradaEncoded}&key=${GoogleAPIKey}`, json: true}, 
         (error, response, body) => {
+            try{
             var lat = body.results[0].geometry.location.lat; 
             var lng = body.results[0].geometry.location.lng;
     //var moradaEncoded = body.results[0].moradaEncoded;
@@ -48,12 +50,14 @@ app.get('/',(req, res)=>{
     var humidity = DSbody.currently.humidity;
     var dewPoint = DSbody.currently.dewPoint;
     var precipProbability = DSbody.currently.precipProbability;
+    var weeklyMinTemperature = DSbody.daily.data[0].temperatureMin;
+    var weeklyMaxTemperature = DSbody.daily.data[0].temperatureMax;
     //fui buscar (pelo menos inicialmente) os aspectos do clima que aparecem na parte de cima da app de meteorologia do Windows, como referência
     //e na app Weather do iPhone
 
     //console.log(req.query.texto)
     //console.log(`It's ${temperature}. It feels like: ${apparentTemperature}.`)
-    res.render("clima.hbs", {texto: `${req.query.texto}`,
+    res.render("clima.hbs", {texto: `${formatted_address}`,
                              icone: `${icon}`,
                              texto2: `Temperatura: ${temperature}°C.`, 
                              texto3: `${summary}`,
@@ -63,22 +67,18 @@ app.get('/',(req, res)=>{
                              texto7: `Pressão Atmosférica: ${pressure} mb.`,
                              texto8: `Humidade: ${humidity}%`,
                              texto9: `Ponto de Condensação: ${dewPoint}°`,
-                             texto10: `Probabilidade de Precipitação: ${precipProbability}.`
+                             texto10: `Probabilidade de Precipitação: ${precipProbability}.`,
+                             texto11: `Temperatura minima: ${weeklyMinTemperature}°C.`,
+                             texto12: `Temperatura máxima: ${weeklyMaxTemperature}°C.`, 
 });
-}); 
 });
-});
-
-app.get('/favoritos',(req, res)=>{
-
-//isto nao me parece ser preciso, mas podemos aproveitar esta parte do código para trocar "favoritos" por outra secção que iremos ter
-
-    res.render('favoritos.hbs',{
-        title:"Welcome to this site",
-        text:"Hello from Express"
+} catch(err) {
+    res.render('index.hbs',{
+        text:"Utilizador, realizou uma pesquisa inválida."
     });
-    
-    });
+}
+});
+});
 
     
 //arranca o servidor e diz a porta que se vai usar
