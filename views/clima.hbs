@@ -12,10 +12,9 @@
             background: url("../pics/sky.png") no-repeat; /* why????? */
         }
 
-        .btn { 
-            font-family: Montserrat, sans-serif;
-            background-color: #3a46f0; 
-            color: #ffffff;
+        .botao{
+            align-content: left: 0px;
+            background-color:white;
         }
 
         .localidade { 
@@ -27,6 +26,12 @@
             text-transform: capitalize;
             color: #000;
         }
+        .btn { 
+            font-family: Montserrat, sans-serif;
+            background-color: #3a46f0; 
+            color: #ffffff;
+            align-content: left;
+        }
 
         .icons{
             align-content: center;
@@ -37,6 +42,7 @@
             -moz-column-count: 2;
             display: table;
             width: 100%;
+            list-style-type: none;
         }
 
         .todayInfo { 
@@ -64,15 +70,9 @@
             -moz-column-count: 7;
             display: table;
             width: 100%;
-        }
-
-        .weekInfo0, .weekInfo1, .weekInfo2, .weekInfo3, .weekInfo4, .weekInfo5, .weekInfo6{ 
-            display: table-cell;
-            font-family: Montserrat, sans-serif;
-            background-color: #000;
-            text-align: center;
-            color: #ffffff;
-            padding: 20px;
+            column-gap: 10px;
+            column-rule-width: 10px;
+            column-rule-color: #000;
         }
 
         .weekList0, .weekList1, .weekList2, .weekList3, .weekList4, .weekList5, .weekList6{
@@ -81,18 +81,20 @@
             padding: 20px;
             font-family: Montserrat, sans-serif;
             font-size: 10px;
-            list-style-type: none;
+            list-style: none;
             color: #000;
             text-align: center;
+            list-style: none;
         }
 
     </style>
 </head>
 
 <body>
+    <div class="botao"><button type="submit" class="btn" action="/index" onclick="location.href='/'">Voltar atrás</button></div>
     <div class="localidade">
-        <button type="submit" class="btn" action="/index" onclick="location.href='/'">Voltar atrás</button>
-        <h1>{{texto}}</h1>
+        
+        <h1 style="align-content: right">{{texto}}</h1>
     </div>
 
     <!--***************************************************-->
@@ -119,31 +121,15 @@
     </div>
 
     <br style="padding: 20px">
+
     <!--***************************************************-->
     <div class="duringThisWeek">
 
-        <table id="whatEven">
-            <tr>
-                <td></td>
-                <td>Sumário</td>
-                <td>Temperatura Mínima</td>
-                <td>Temperatura Máxima</td>
-            </tr>
-        </table>
-
         <!--***************************************************-->
-        <div class="weekInfo0">
-                
-        </div>
 
         <div class="weekList0">
             <ul>
-                <li>
-                    <figure class="icons">
-                        <canvas id="{{icone2}}" width="40" height="40">
-                        </canvas>
-                    </figure>
-                </li>
+                <li>amanhã</li><br>
                 <li>{{texto11}}</li>
                 <li>{{texto12}}</li>
                 <li>{{texto13}}</li>
@@ -151,15 +137,10 @@
         </div>
 
         <!--***************************************************-->
-        <div class="weekInfo1">
-                <figure class="icons">
-                    <canvas id="{{icone3}}" width="40" height="40">
-                    </canvas>
-                </figure>
-        </div>
 
         <div class="weekList1">
             <ul>
+                <li>depois de amanhã</li><br>
                 <li>{{texto14}}</li>
                 <li>{{texto15}}</li>
                 <li>{{texto16}}</li>
@@ -167,15 +148,10 @@
         </div>
 
         <!--***************************************************-->
-        <div class="weekInfo2">
-                <figure class="icons">
-                    <canvas id="{{icone4}}" width="40" height="40">
-                    </canvas>
-                </figure>
-        </div>
 
         <div class="weekList2">
             <ul>
+                <li>depois de depois de amanhã</li><br>
                 <li>{{texto17}}</li>
                 <li>{{texto18}}</li>
                 <li>{{texto19}}</li>
@@ -183,15 +159,10 @@
         </div>
 
         <!--***************************************************-->
-        <div class="weekInfo3">
-                <figure class="icons">
-                    <canvas id="{{icone5}}" width="40" height="40">
-                    </canvas>
-                </figure>
-        </div>
 
         <div class="weekList3">
             <ul>
+                <li>depois de depois de depois de amanhã</li><br>
                 <li>{{texto20}}</li>
                 <li>{{texto21}}</li>
                 <li>{{texto22}}</li>
@@ -199,15 +170,10 @@
         </div>
 
         <!--***************************************************-->
-        <div class="weekInfo4">
-                <figure class="icons">
-                    <canvas id="{{icone6}}" width="40" height="40">
-                    </canvas>
-                </figure>
-        </div>
 
         <div class="weekList4">
             <ul>
+                <li>depois de depois de depois de depois de amanhã</li><br>
                 <li>{{texto23}}</li>
                 <li>{{texto24}}</li>
                 <li>{{texto25}}</li>
@@ -215,15 +181,10 @@
         </div>
 
         <!--***************************************************-->
-        <div class="weekInfo5">
-                <figure class="icons">
-                    <canvas id="{{icone7}}" width="40" height="40">
-                    </canvas>
-                </figure>
-        </div>
 
         <div class="weekList5">
             <ul>
+                <li>depois de depois de depois de depois de depois de amanhã</li><br>
                 <li>{{texto26}}</li>
                 <li>{{texto27}}</li>
                 <li>{{texto28}}</li>
@@ -231,15 +192,10 @@
         </div>
 
         <!--***************************************************-->
-        <div class="weekInfo6">
-                <figure class="icons">
-                    <canvas id="{{icone8}}" width="40" height="40">
-                    </canvas>
-                </figure>
-        </div>
 
         <div class="weekList6">
             <ul>
+                <li>depois de depois de depois de depois de depois de depois de amanhã</li><br>
                 <li>{{texto29}}</li>
                 <li>{{texto30}}</li>
                 <li>{{texto31}}</li>

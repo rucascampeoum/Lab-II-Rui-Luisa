@@ -105,7 +105,7 @@ app.get('/',(req, res)=>{
 
                              icone2: `${weekly0Icon}`,
                              texto11: `${weekly0Summary}`,
-                             texto12: `Temperatura minima: ${weekly0MinTemperature}°C.`,
+                             texto12: `Temperatura minim ${weekly0MinTemperature}°C.`,
                              texto13: `Temperatura máxima: ${weekly0MaxTemperature}°C.`, 
 
                              icone3: `${weekly1Icon}`,
