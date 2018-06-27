@@ -27,28 +27,67 @@
             text-transform: capitalize;
             color: #000;
         }
-        .info { 
-            font-family: Montserrat, sans-serif;
-            background-color: #000;
-            align-content: center;
-            text-align: center;
-            color: #ffffff;
-            padding: 20px;
-        }
 
         .icons{
             align-content: center;
         }
 
-        ul{
+        .onThisDay{
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            display: table;
+            width: 100%;
+        }
+
+        .todayInfo { 
+            display: table-cell;
+            font-family: Montserrat, sans-serif;
+            background-color: #000;
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .todayList{
+            display: table-cell;
             background-color:white;
             padding: 20px;
             font-family: Montserrat, sans-serif;
             list-style-type: none;
             color: #000;
-            align-content: center;
             text-align: center;
+            align-content: center;
         }
+
+        .duringThisWeek{
+            -webkit-column-count: 7;
+            -moz-column-count: 7;
+            display: table;
+            width: 100%;
+        }
+
+        .weekInfo { 
+            display: table-cell;
+            font-family: Montserrat, sans-serif;
+            background-color: #000;
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        
+
+        .weekList{
+            display: table-cell;
+            background-color:white;
+            padding: 20px;
+            font-family: Montserrat, sans-serif;
+            list-style-type: none;
+            color: #000;
+            text-align: center;
+            align-content: center;
+        }
+
     </style>
 </head>
 
@@ -58,8 +97,8 @@
         <h1>{{texto}}</h1>
     </div>
 
-    <div>
-        <div class="info">
+    <div class="onThisDay">
+        <div class="todayInfo">
                 <figure class="icons">
         <canvas id="{{icone}}" width="90" height="90">
         </canvas>
@@ -67,8 +106,7 @@
             <h2>{{texto2}}</h2>
             <h3>{{texto3}}</h3>
         </div>
-
-        <div class="list">
+        <div class="todayList">
             <ul>
                 <li>{{texto4}}</li>
                 <li>{{texto5}}</li>
@@ -77,13 +115,28 @@
                 <li>{{texto8}}</li>
                 <li>{{texto9}}</li>
                 <li>{{texto10}}</li>
-                <li>{{texto11}}</li>
-                <li>{{texto12}}</li>
             </ul>
         </div>
     </div>
-
-
+    <div class="duringThisWeek">
+        <div class="weekInfo">
+                <figure class="icons">
+        <canvas id="{{icone2}}" width="90" height="90">
+        </canvas>
+      </figure>
+        </div>
+        <div class="weekList">
+            <ul>
+                <li>{{texto11}}</li>
+                <li>{{texto12}}</li>
+                <li>{{texto13}}</li>
+                <li>{{texto7}}</li>
+                <li>{{texto8}}</li>
+                <li>{{texto9}}</li>
+                <li>{{texto10}}</li>
+            </ul>
+        </div>
+    </div>
 
       <script src="skycons.js"></script>
 

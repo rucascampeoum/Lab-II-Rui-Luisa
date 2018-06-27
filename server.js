@@ -50,8 +50,42 @@ app.get('/',(req, res)=>{
     var humidity = DSbody.currently.humidity;
     var dewPoint = DSbody.currently.dewPoint;
     var precipProbability = DSbody.currently.precipProbability;
-    var weeklyMinTemperature = DSbody.daily.data[0].temperatureMin;
-    var weeklyMaxTemperature = DSbody.daily.data[0].temperatureMax;
+
+    var weekly0Icon = DSbody.daily.data[0].icon;
+    var weekly0Summary = DSbody.daily.data[0].summary;
+    var weekly0MinTemperature = DSbody.daily.data[0].temperatureMin;
+    var weekly0MaxTemperature = DSbody.daily.data[0].temperatureMax;
+
+    var weekly1Icon = DSbody.daily.data[1].icon;
+    var weekly1Summary = DSbody.daily.data[1].summary;
+    var weekly1MinTemperature = DSbody.daily.data[1].temperatureMin;
+    var weekly1MaxTemperature = DSbody.daily.data[1].temperatureMax;
+
+    var weekly2Icon = DSbody.daily.data[2].icon;
+    var weekly2Summary = DSbody.daily.data[2].summary;
+    var weekly2MinTemperature = DSbody.daily.data[2].temperatureMin;
+    var weekly2MaxTemperature = DSbody.daily.data[2].temperatureMax;
+
+    var weekly3Icon = DSbody.daily.data[3].icon;
+    var weekly3Summary = DSbody.daily.data[3].summary;
+    var weekly3MinTemperature = DSbody.daily.data[3].temperatureMin;
+    var weekly3MaxTemperature = DSbody.daily.data[3].temperatureMax;
+
+    var weekly4Icon = DSbody.daily.data[4].icon;
+    var weekly4Summary = DSbody.daily.data[4].summary;
+    var weekly4MinTemperature = DSbody.daily.data[4].temperatureMin;
+    var weekly4MaxTemperature = DSbody.daily.data[4].temperatureMax;
+
+    var weekly5Icon = DSbody.daily.data[5].icon;
+    var weekly5Summary = DSbody.daily.data[5].summary;
+    var weekly5MinTemperature = DSbody.daily.data[5].temperatureMin;
+    var weekly5MaxTemperature = DSbody.daily.data[5].temperatureMax;
+
+    var weekly6Icon = DSbody.daily.data[6].icon;
+    var weekly6Summary = DSbody.daily.data[6].summary;
+    var weekly6MinTemperature = DSbody.daily.data[6].temperatureMin;
+    var weekly6MaxTemperature = DSbody.daily.data[6].temperatureMax;
+
     //fui buscar (pelo menos inicialmente) os aspectos do clima que aparecem na parte de cima da app de meteorologia do Windows, como referência
     //e na app Weather do iPhone
 
@@ -68,8 +102,41 @@ app.get('/',(req, res)=>{
                              texto8: `Humidade: ${humidity}%`,
                              texto9: `Ponto de Condensação: ${dewPoint}°`,
                              texto10: `Probabilidade de Precipitação: ${precipProbability}.`,
-                             texto11: `Temperatura minima: ${weeklyMinTemperature}°C.`,
-                             texto12: `Temperatura máxima: ${weeklyMaxTemperature}°C.`, 
+
+                             icone2: `${weekly0Icon}`,
+                             texto11: `${weekly0Summary}°C.`,
+                             texto12: `Temperatura minima: ${weekly0MinTemperature}°C.`,
+                             texto13: `Temperatura máxima: ${weekly0MaxTemperature}°C.`, 
+
+                             icone3: `${weekly1Icon}`,
+                             texto14: `${weekly1Summary}°C.`,
+                             texto15: `Temperatura minima: ${weekly1MinTemperature}°C.`,
+                             texto16: `Temperatura máxima: ${weekly1MaxTemperature}°C.`,
+
+                             icone4: `${weekly2Icon}`,
+                             texto17: `${weekly2Summary}°C.`,
+                             texto18: `Temperatura minima: ${weekly2MinTemperature}°C.`,
+                             texto19: `Temperatura máxima: ${weekly2MaxTemperature}°C.`, 
+
+                             icone5: `${weekly3Icon}`,
+                             texto20: `${weekly3Summary}°C.`,
+                             texto21: `Temperatura minima: ${weekly3MinTemperature}°C.`,
+                             texto22: `Temperatura máxima: ${weekly3MaxTemperature}°C.`, 
+
+                             icone6: `${weekly4Icon}`,
+                             texto23: `${weekly4Summary}°C.`,
+                             texto24: `Temperatura minima: ${weekly4MinTemperature}°C.`,
+                             texto25: `Temperatura máxima: ${weekly4MaxTemperature}°C.`, 
+
+                             icone7: `${weekly5Icon}`,
+                             texto26: `${weekly5Summary}°C.`,
+                             texto27: `Temperatura minima: ${weekly5MinTemperature}°C.`,
+                             texto28: `Temperatura máxima: ${weekly5MaxTemperature}°C.`, 
+
+                             icone8: `${weekly6Icon}`,
+                             texto29: `${weekly6Summary}°C.`,
+                             texto30: `Temperatura minima: ${weekly6MinTemperature}°C.`,
+                             texto31: `Temperatura máxima: ${weekly6MaxTemperature}°C.`, 
 });
 });
 } catch(err) {
