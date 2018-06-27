@@ -66,7 +66,7 @@
             width: 100%;
         }
 
-        .weekInfo { 
+        .weekInfo0, .weekInfo1, .weekInfo2, .weekInfo3, .weekInfo4, .weekInfo5, .weekInfo6{ 
             display: table-cell;
             font-family: Montserrat, sans-serif;
             background-color: #000;
@@ -75,17 +75,15 @@
             padding: 20px;
         }
 
-        
-
-        .weekList{
+        .weekList0, .weekList1, .weekList2, .weekList3, .weekList4, .weekList5, .weekList6{
             display: table-cell;
             background-color:white;
             padding: 20px;
             font-family: Montserrat, sans-serif;
+            font-size: 10px;
             list-style-type: none;
             color: #000;
             text-align: center;
-            align-content: center;
         }
 
     </style>
@@ -97,12 +95,13 @@
         <h1>{{texto}}</h1>
     </div>
 
+    <!--***************************************************-->
     <div class="onThisDay">
         <div class="todayInfo">
                 <figure class="icons">
-        <canvas id="{{icone}}" width="90" height="90">
-        </canvas>
-      </figure>
+                    <canvas id="{{icone}}" width="90" height="90">
+                    </canvas>
+                </figure>
             <h2>{{texto2}}</h2>
             <h3>{{texto3}}</h3>
         </div>
@@ -118,24 +117,135 @@
             </ul>
         </div>
     </div>
+
+    <br style="padding: 20px">
+    <!--***************************************************-->
     <div class="duringThisWeek">
-        <div class="weekInfo">
-                <figure class="icons">
-        <canvas id="{{icone2}}" width="90" height="90">
-        </canvas>
-      </figure>
+
+        <table id="whatEven">
+            <tr>
+                <td></td>
+                <td>Sumário</td>
+                <td>Temperatura Mínima</td>
+                <td>Temperatura Máxima</td>
+            </tr>
+        </table>
+
+        <!--***************************************************-->
+        <div class="weekInfo0">
+                
         </div>
-        <div class="weekList">
+
+        <div class="weekList0">
             <ul>
+                <li>
+                    <figure class="icons">
+                        <canvas id="{{icone2}}" width="40" height="40">
+                        </canvas>
+                    </figure>
+                </li>
                 <li>{{texto11}}</li>
                 <li>{{texto12}}</li>
                 <li>{{texto13}}</li>
-                <li>{{texto7}}</li>
-                <li>{{texto8}}</li>
-                <li>{{texto9}}</li>
-                <li>{{texto10}}</li>
             </ul>
         </div>
+
+        <!--***************************************************-->
+        <div class="weekInfo1">
+                <figure class="icons">
+                    <canvas id="{{icone3}}" width="40" height="40">
+                    </canvas>
+                </figure>
+        </div>
+
+        <div class="weekList1">
+            <ul>
+                <li>{{texto14}}</li>
+                <li>{{texto15}}</li>
+                <li>{{texto16}}</li>
+            </ul>
+        </div>
+
+        <!--***************************************************-->
+        <div class="weekInfo2">
+                <figure class="icons">
+                    <canvas id="{{icone4}}" width="40" height="40">
+                    </canvas>
+                </figure>
+        </div>
+
+        <div class="weekList2">
+            <ul>
+                <li>{{texto17}}</li>
+                <li>{{texto18}}</li>
+                <li>{{texto19}}</li>
+            </ul>
+        </div>
+
+        <!--***************************************************-->
+        <div class="weekInfo3">
+                <figure class="icons">
+                    <canvas id="{{icone5}}" width="40" height="40">
+                    </canvas>
+                </figure>
+        </div>
+
+        <div class="weekList3">
+            <ul>
+                <li>{{texto20}}</li>
+                <li>{{texto21}}</li>
+                <li>{{texto22}}</li>
+            </ul>
+        </div>
+
+        <!--***************************************************-->
+        <div class="weekInfo4">
+                <figure class="icons">
+                    <canvas id="{{icone6}}" width="40" height="40">
+                    </canvas>
+                </figure>
+        </div>
+
+        <div class="weekList4">
+            <ul>
+                <li>{{texto23}}</li>
+                <li>{{texto24}}</li>
+                <li>{{texto25}}</li>
+            </ul>
+        </div>
+
+        <!--***************************************************-->
+        <div class="weekInfo5">
+                <figure class="icons">
+                    <canvas id="{{icone7}}" width="40" height="40">
+                    </canvas>
+                </figure>
+        </div>
+
+        <div class="weekList5">
+            <ul>
+                <li>{{texto26}}</li>
+                <li>{{texto27}}</li>
+                <li>{{texto28}}</li>
+            </ul>
+        </div>
+
+        <!--***************************************************-->
+        <div class="weekInfo6">
+                <figure class="icons">
+                    <canvas id="{{icone8}}" width="40" height="40">
+                    </canvas>
+                </figure>
+        </div>
+
+        <div class="weekList6">
+            <ul>
+                <li>{{texto29}}</li>
+                <li>{{texto30}}</li>
+                <li>{{texto31}}</li>
+            </ul>
+        </div>
+
     </div>
 
       <script src="skycons.js"></script>
@@ -157,6 +267,20 @@
 
         language = "pt";
 
+        function diaSemana() {
+            var d = new Date();
+            var weekday = new Array(7);
+            weekday[0] = "Domingo";
+            weekday[1] = "Segunda";
+            weekday[2] = "Terça";
+            weekday[3] = "Quarta";
+            weekday[4] = "Quinta";
+            weekday[5] = "Sexta";
+            weekday[6] = "Sábado";
+
+            var n = weekday[d.getDay()];
+            document.getElementById("demo").innerHTML = n;
+        }
         
     </script>
 </body>

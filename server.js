@@ -104,37 +104,37 @@ app.get('/',(req, res)=>{
                              texto10: `Probabilidade de Precipitação: ${precipProbability}.`,
 
                              icone2: `${weekly0Icon}`,
-                             texto11: `${weekly0Summary}°C.`,
+                             texto11: `${weekly0Summary}`,
                              texto12: `Temperatura minima: ${weekly0MinTemperature}°C.`,
                              texto13: `Temperatura máxima: ${weekly0MaxTemperature}°C.`, 
 
                              icone3: `${weekly1Icon}`,
-                             texto14: `${weekly1Summary}°C.`,
+                             texto14: `${weekly1Summary}`,
                              texto15: `Temperatura minima: ${weekly1MinTemperature}°C.`,
                              texto16: `Temperatura máxima: ${weekly1MaxTemperature}°C.`,
 
                              icone4: `${weekly2Icon}`,
-                             texto17: `${weekly2Summary}°C.`,
+                             texto17: `${weekly2Summary}`,
                              texto18: `Temperatura minima: ${weekly2MinTemperature}°C.`,
                              texto19: `Temperatura máxima: ${weekly2MaxTemperature}°C.`, 
 
                              icone5: `${weekly3Icon}`,
-                             texto20: `${weekly3Summary}°C.`,
+                             texto20: `${weekly3Summary}`,
                              texto21: `Temperatura minima: ${weekly3MinTemperature}°C.`,
                              texto22: `Temperatura máxima: ${weekly3MaxTemperature}°C.`, 
 
                              icone6: `${weekly4Icon}`,
-                             texto23: `${weekly4Summary}°C.`,
+                             texto23: `${weekly4Summary}`,
                              texto24: `Temperatura minima: ${weekly4MinTemperature}°C.`,
                              texto25: `Temperatura máxima: ${weekly4MaxTemperature}°C.`, 
 
                              icone7: `${weekly5Icon}`,
-                             texto26: `${weekly5Summary}°C.`,
+                             texto26: `${weekly5Summary}`,
                              texto27: `Temperatura minima: ${weekly5MinTemperature}°C.`,
                              texto28: `Temperatura máxima: ${weekly5MaxTemperature}°C.`, 
 
                              icone8: `${weekly6Icon}`,
-                             texto29: `${weekly6Summary}°C.`,
+                             texto29: `${weekly6Summary}`,
                              texto30: `Temperatura minima: ${weekly6MinTemperature}°C.`,
                              texto31: `Temperatura máxima: ${weekly6MaxTemperature}°C.`, 
 });
