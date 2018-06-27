@@ -51,7 +51,10 @@
 
     <div>
         <div class="info">
-            <h2>{{icone}}</h2>
+                <figure class="icons">
+        <canvas id="{{icone}}" width="64" height="64">
+        </canvas>
+      </figure>
             <h2>{{texto2}}</h2>
             <h3>{{texto3}}</h3>
         </div>
@@ -66,57 +69,12 @@
         </ul>
     </div>
 
-    <figure class="icons">
-        <canvas id="clear-day" width="64" height="64">
-        </canvas>
 
-        <canvas id="clear-night" width="64" height="64">
-        </canvas>
-
-        <canvas id="partly-cloudy-day" width="64" height="64">
-        </canvas>
-
-        <canvas id="partly-cloudy-night" width="64" height="64">
-        </canvas>
-
-        <canvas id="cloudy" width="64" height="64">
-        </canvas>
-
-        <canvas id="rain" width="64" height="64">
-        </canvas>
-
-        <canvas id="sleet" width="64" height="64">
-        </canvas>
-
-        <canvas id="snow" width="64" height="64">
-        </canvas>
-
-        <canvas id="wind" width="64" height="64">
-        </canvas>
-
-        <canvas id="fog" width="64" height="64">
-        </canvas>
-      </figure>
 
       <script src="skycons.js"></script>
 
     <script>
-        var skycons = new Skycons({"color": "pink"});
-
-        skycons.add("clear-day", Skycons.CLEAR_DAY);
-        skycons.add("clear-night", Skycons.CLEAR_NIGHT);
-        skycons.add("partly-cloudy-day", Skycons.PARTLY_CLOUDY_DAY);
-        skycons.add("partly-cloudy-night", Skycons.PARTLY_CLOUDY_NIGHT);
-        skycons.add("cloudy", Skycons.CLOUDY);
-        skycons.add("rain", Skycons.RAIN);
-        skycons.add("sleet", Skycons.SLEET);
-        skycons.add("snow", Skycons.SNOW);
-        skycons.add("wind", Skycons.WIND);
-        skycons.add("fog", Skycons.FOG);
-
-        skycons.play();
-
-var icons = new Skycons(),
+    var icons = new Skycons({"color": "white"}),
           list  = [
             "clear-day", "clear-night", "partly-cloudy-day",
             "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
