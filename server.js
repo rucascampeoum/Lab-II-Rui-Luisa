@@ -53,7 +53,7 @@ app.get('/',(req, res)=>{
 
     //console.log(req.query.texto)
     //console.log(`It's ${temperature}. It feels like: ${apparentTemperature}.`)
-    res.render("clima.hbs", {texto: `${req.query.texto}`,
+    res.render("clima.hbs", {texto: `${formatted_address}`,
                              icone: `${icon}`,
                              texto2: `Temperatura: ${temperature}°C.`, 
                              texto3: `${summary}`,
