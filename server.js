@@ -6,8 +6,8 @@ const request = require('request');
 const yargs = require('yargs');
 const app= express();
 
-    var GoogleAPIKey = 'AIzaSyD7meilaIIDrfgGdcY81BcMit5DtPpZZrA';
-    var DarkSkyAPIKey = 'a0d3e83e6e619d62098fa6fd0d6b86f4';
+    var GoogleAPIKey = 'inserir key';
+    var DarkSkyAPIKey = 'inserir key';
 
     const argv = yargs.argv;
     var morada = argv.morada;
